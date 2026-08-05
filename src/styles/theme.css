@@ -1,55 +1,56 @@
 @theme {
-  --color-accent: hsla(210, 68%, 50%, 1);
-  --color-outline: #BABFCF;
+  --color-accent: hsla(48, 100%, 69%, 1);
+  --color-outline: hsla(228, 6%, 85%, 1);
 
-  --color-text-primary: hsla(227, 96%, 9%, 1);
+  --color-text-primary: hsla(0, 0%, 0%, 1);
   --color-text-primary-inverse: hsla(0, 0%, 100%, 1);
   --color-text-secondary: hsla(0, 0%, 27%, 0.6);
   --color-text-secondary-inverse: hsla(0, 0%, 100%, 0.8);
   --color-text-tertiary: hsla(211, 33%, 15%, 1);
   --color-text-tertiary-inverse: hsla(0, 0%, 100%, 0.6);
 
-  --color-surface-primary: hsla(225, 44%, 96%, 1);
-  --color-surface-primary-inverse: hsla(210, 68%, 50%, 1);
-  --color-surface-secondary: hsla(0, 0%, 100%, 1);
-  --color-surface-secondary-inverse: hsla(225, 44%, 96%, 1);
+  --color-surface-primary: hsla(0, 0%, 100%, 1);
+  --color-surface-primary-inverse: hsla(240, 10%, 19%, 1);
+  --color-surface-secondary: hsla(48, 100%, 69%, 1);
+  --color-surface-secondary-inverse: hsla(240, 12%, 13%, 1);
   --color-surface-blur: hsla(240, 3%, 15%, 0.75);
 
-  --color-surface-input: #176ABD;
-  --color-text-input: var(--color-text-primary-inverse);
+  --color-surface-input: hsla(0, 0%, 100%, 1);
+  --color-text-input: hsla(240, 10%, 19%, 1);
+  --color-text-input-label: hsla(240, 10%, 19%, 1);
 
-  --color-button-surface-primary: hsla(210, 68%, 50%, 1);
-  --color-button-surface-accent: hsla(348, 76%, 46%, 1);
+  --color-button-surface-primary: hsla(0, 0%, 100%, 1);
+  --color-button-surface-secondary: hsla(240, 10%, 19%, 1);
+  --color-button-surface-accent: hsla(48, 100%, 69%, 1);
   --color-button-border: transparent;
   --color-button-border-inverse: transparent;
 
-  --color-mobile-menu-surface: var(--color-surface-primary);
+  --color-mobile-menu-surface: hsla(48, 100%, 69%, 1);
   --color-mobile-menu-text: var(--color-text-primary);
 
-  --color-toast-surface: hsla(0, 0%, 100%, 1);
-  --color-toast-text: vhsla(203, 100%, 15%, 1);
+  --color-toast-surface: hsla(240, 10%, 19%, 1);
+  --color-toast-text: hsla(0, 0%, 100%, 1);
   --color-toast-success-text: hsla(0, 0%, 100%, 1);
-  --color-toast-success-bg: hsla(124, 37%, 53%, 1);
-  --color-toast-success-border: hsla(124, 37%, 53%, 1);
+  --color-toast-success-bg: hsla(124, 39%, 55%, 1);
+  --color-toast-success-border: hsla(124, 39%, 55%, 1);
   --color-toast-error-text: hsla(0, 0%, 100%, 1);
-  --color-toast-error-bg: hsla(0, 99%, 70%, 1);
-  --color-toast-error-border: hsla(0, 99%, 70%, 1);
+  --color-toast-error-bg: hsla(345, 69%, 49%, 1);
+  --color-toast-error-border: hsla(345, 69%, 49%, 1);
 
-  --color-promo-surface: var(--color-surface-primary);
-  --color-promo-text-primary: var(--color-text-primary);
-  --color-promo-text-secondary: var(--color-text-secondary);
+  --color-promo-surface: hsla(240, 10%, 19%, 1);
+  --color-promo-text-primary: hsla(0, 0%, 100%, 1);
 
-  --color-hero-main-surface: var(--color-surface-primary-inverse);
-  --color-hero-main-text: var(--color-text-primary-inverse);
+  --color-hero-main-surface: hsla(48, 100%, 69%, 1);
+  --color-hero-main-text: hsla(240, 10%, 19%, 1);
 
-  --color-hero-about-surface: var(--color-surface-primary-inverse);
-  --color-hero-about-text: var(--color-text-primary-inverse);
+  --color-hero-about-surface: hsla(48, 100%, 69%, 1);
+  --color-hero-about-text: hsla(240, 10%, 19%, 1);
 
-  --color-cta-surface: var(--color-surface-primary-inverse);
+  --color-cta-surface: hsla(240, 10%, 19%, 1);
   --color-cta-text: var(--color-text-primary-inverse);
 
-  --color-kp-surface: var(--color-surface-primary-inverse);
-  --color-kp-text: var(--color-text-primary-inverse);
+  --color-kp-surface: hsla(48, 100%, 69%, 1);
+  --color-kp-text: hsla(240, 10%, 19%, 1);
 
   --color-header-surface: var(--color-surface-primary);
   --color-header-text: var(--color-text-primary);
@@ -59,29 +60,29 @@
   --color-footer-bottom-surface: var(--color-surface-primary);
   --color-footer-bottom-text: var(--color-text-primary);
 
-  --color-appskilla-surface: hsla(210, 68%, 50%, 1);
+  --color-appskilla-surface: hsla(240, 12%, 13%, 1);
   --color-appskilla-text: var(--color-text-primary-inverse);
   --color-appskilla-border: transparent;
 
-  --color-button-accent-surface: var(--color-button-surface-accent);
-  --color-button-accent-text: var(--color-text-primary-inverse);
-  --color-button-accent-border: var(--color-button-surface-accent);
-  --color-button-accent-surface_hover: var(--color-text-primary-inverse);
-  --color-button-accent-text_hover: var(--color-button-surface-accent);
-  --color-button-accent-border_hover: var(--color-text-primary-inverse);
 
-  --color-button-primary-surface: var(--color-button-surface-primary);
-  --color-button-primary-text: var(--color-text-primary-inverse);
-  --color-button-primary-border: var(--color-button-surface-primary);
-  --color-button-primary-surface_hover: var(--color-button-surface-accent);
-  --color-button-primary-text_hover: var(--color-text-primary);
-  --color-button-primary-border_hover: var(--color-button-surface-accent);
+  --color-button-primary-surface: hsla(0, 0%, 100%, 1);
+  --color-button-primary-text: hsla(240, 10%, 19%, 1);
+  --color-button-primary-border: hsla(0, 0%, 100%, 1);
+  --color-button-primary-surface_hover: hsla(48, 100%, 69%, 1);
+  --color-button-primary-text_hover: hsla(240, 10%, 19%, 1);
+  --color-button-primary-border_hover: hsla(48, 100%, 69%, 1);
 
-  --color-button-secondary-surface: hsla(0, 0%, 100%, 1);
-  --color-button-secondary-text: hsla(210, 68%, 50%, 1);
-  --color-button-secondary-border: hsla(0, 0%, 100%, 1);
-  --color-button-secondary-surface_hover: var(--color-button-surface-primary);
-  --color-button-secondary-text_hover: var(--color-text-primary-inverse);
-  --color-button-secondary-border_hover: var(--color-button-surface-primary);
+  --color-button-secondary-surface: hsla(240, 10%, 19%, 1);
+  --color-button-secondary-text: hsla(0, 0%, 100%, 1);
+  --color-button-secondary-border: hsla(240, 10%, 19%, 1);
+  --color-button-secondary-surface_hover: hsla(48, 100%, 69%, 1);
+  --color-button-secondary-text_hover: hsla(240, 10%, 19%, 1);
+  --color-button-secondary-border_hover: hsla(48, 100%, 69%, 1);
 
+  --color-button-accent-surface: hsla(48, 100%, 69%, 1);
+  --color-button-accent-text: hsla(240, 10%, 19%, 1);
+  --color-button-accent-border: hsla(48, 100%, 69%, 1);
+  --color-button-accent-surface_hover: hsla(240, 10%, 19%, 1);
+  --color-button-accent-text_hover: hsla(0, 0%, 100%, 1);
+  --color-button-accent-border_hover: hsla(240, 10%, 19%, 1);
 }

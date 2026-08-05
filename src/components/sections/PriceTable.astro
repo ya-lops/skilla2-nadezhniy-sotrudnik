@@ -23,31 +23,31 @@ const discountPercent = getDiscountPercent(brandData.main.adv_price_percent);
 ---
 
 <section class="py-8 md:py-10 lg:py-20" data-cmp="PriceTable" itemscope itemtype="https://schema.org/Service">
-  <meta itemprop="name" content={currentService?.name || "Услуги"} />
+  <meta itemprop="name" content={currentService?.name || "Услуги и цены"} />
   <meta itemprop="description" content={currentService?.description || ""} />
   <meta itemprop="provider" content={brandData.default.name} />
 
   <div class="container">
-    <h1 class="mb-5 lg:mb-10 typo-h1-x2" itemprop="name">
+    <h1 class="mb-8 lg:mb-12 typo-h2 text-center" itemprop="name">
       Услуги в {brandData.main.city_rod}
     </h1>
 
     <h2 class="sr-only">{currentService?.name}</h2>
 
-    <div class="flex flex-col lg:flex-row gap-5 mb-5 lg:mb-20">
-      <p class="max-w-140 typo-t3 text-text-secondary text-balance" itemprop="description">
+    <div class="flex flex-col items-center gap-5 mb-5 lg:mb-20">
+      <p class="max-w-160 typo-t2 text-text-secondary text-center text-balance" itemprop="description">
         {
           currentService?.description ??
             "Для переезда, склада и стройки. Работаем с погрузчиками, штабелёрами, по доступной цене и без задержек"
         }
       </p>
 
-      <div class="w-[min(35rem,100%)] lg:ml-auto">
+      <div class="w-[min(35rem,100%)] mt-12 lg:mt-25">
         <PriceTableNavDropdown {brandData} services={allServices} />
       </div>
     </div>
 
-    {currentService && <PriceTableServices {currentService} {discountPercent} showDiscountValue={false} />}
+    {currentService && <PriceTableServices {currentService} {discountPercent} showDiscountValue={true} />}
 
     <CtaCall {brandData} />
   </div>

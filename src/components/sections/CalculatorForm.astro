@@ -2,7 +2,6 @@
 import type { BrandData } from "@/types/brand";
 
 import CalcInput from "@/components/ui/CalcInput.astro";
-import CtaPrice from "../blocks/CtaPrice.astro";
 import CalculatorFormResultYoursFields from "../blocks/CalculatorFormResultYoursFields.astro";
 
 interface Props {
@@ -18,11 +17,15 @@ const discount = getDiscountPercent(brandData.main.adv_price_percent);
 const { price, discountedPrice, showDiscount } = getGlobalMinPriceWithDiscount(brandData.services, discount);
 ---
 
-<section id="calc" class="py-8 md:py-10 lg:py-20 overflow-clip scroll-mt-25" data-cmp="CalculatorForm">
+<section
+  id="calc"
+  class="py-8 md:py-10 lg:py-25 overflow-clip scroll-mt-25 mx-2 lg:mx-5 rounded-[20px] md:rounded-[40px] bg-[#2B2B35]"
+  data-cmp="CalculatorForm"
+>
   <div class="container">
-    <h2 class="max-w-230 mb-15 typo-h3-x2 uppercase">Калькулятор стоимости вашего персонала</h2>
+    <h2 class="mb-15 lg:mb-25 typo-h3 uppercase text-center text-balance text-text-primary-inverse">Калькулятор стоимости персонала</h2>
 
-    <div x-data="employeeCostCalculator()">
+    <div x-data="employeeCostCalculator()" class="max-w-295 mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-7">
         <CalcInput id="calc-net-salary" label="Зарплата на руки" model="netSalary" unit="₽" min="10000" max="300000" step="10000" />
 
@@ -53,16 +56,16 @@ const { price, discountedPrice, showDiscount } = getGlobalMinPriceWithDiscount(b
         />
       </div>
 
-      <div class="mt-14">
-        <div class="grid grid-cols-1 lg:grid-cols-[1.125fr_2fr] gap-10 items-stretch">
-          <div class="p-10 bg-white rounded-[20px]">
+      <div class="mt-25">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-3 items-stretch">
+          <div class="p-5 lg:p-12.5 rounded-[20px] bg-[#1E1E26] text-text-primary-inverse">
             <p class="typo-t4">Стоимость ваших сотрудников</p>
-            <p class="mt-6 font-heading">
-              <span class="typo-h5-x2" x-text="fmt(totalPerHour, 2)"></span>
+            <p class="mt-6 typo-h5">
+              <span class="typo-h3" x-text="fmt(totalPerHour, 2)"></span>
               <span>₽</span>/час
             </p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-10 mt-10 pt-10 border-t border-t-outline *:flex *:flex-col *:gap-2">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-10 mt-10 pt-10 border-t border-t-outline/10 *:flex *:flex-col *:gap-2">
               <CalculatorFormResultYoursFields />
             </div>
           </div>

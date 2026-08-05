@@ -1,32 +1,30 @@
 ---
-import Button from "@/components/ui/Button.astro";
+import type { BrandData } from "@/types/brand";
+
+import HeroAboutFeatures from "../blocks/HeroAboutFeatures.astro";
 
 interface Props {
-  brandData: any;
+  brandData: BrandData;
 }
 
 const { brandData } = Astro.props;
-
-const firstServiceUrl = brandData.services[0].url.toLowerCase();
 ---
 
-<section class="hero grid grid-cols-[100%] lg:min-h-[500px] bg-hero-main-surface" data-cmp="HeroMain">
-  <div class="container h-full">
-    <div class="grid grid-cols-1 lg:grid-cols-[4fr_2.5fr] gap-3 items-center h-full">
-      <div class="flex flex-col gap-10 py-10 text-hero-main-text">
-        <h1 class="flex flex-col items-start uppercase">
-          <span class="max-md:w-min typo-h2-x2 bg-[#176ABD] rounded-2xl py-2 px-5 mb-2">100 000 заказов</span>
-          <span class="typo-h2-x2">за 10 лет работы</span>
-        </h1>
-
-        <div class="mt-auto">
-          <Button href={`/${firstServiceUrl}`} variant="accent" text="Наши услуги" />
-        </div>
-      </div>
-
-      <div class="flex items-end justify-center self-end">
-        <img src="/images/hero-about.webp" alt="" fetchpriority="high" class="pointer-events-none" />
+<section
+  class="hero grid grid-cols-[100%] min-h-[510px] md:min-h-[880px] mt-[-133px] pt-[133px] lg:mt-[-172px] lg:pt-[172px] bg-hero-main-surface mx-2 lg:mx-5 rounded-[20px] md:rounded-[40px] overflow-clip"
+  data-cmp="HeroAbout"
+>
+  <div class="container relative h-full isolate">
+    <div class="flex flex-col items-center justify-center h-full py-14 text-center">
+      <h1 class="flex flex-col typo-h1 uppercase my-auto pb-25 lg:pb-[132px]">
+        <span class="">Фанатично контролируем <span class="text-text-primary-inverse">качество услуг</span></span>
+      </h1>
+      <div class="max-w-200">
+        <HeroAboutFeatures {brandData} />
       </div>
     </div>
+
+    <img class="absolute -z-1 max-lg:origin-top-left top-[-25%] left-[-25%] max-lg:scale-80 md:bottom-0 md:left-[0%]" src="/images/bg-hero-main-3.webp" alt=""/>
+    <img class="absolute -z-1 max-lg:origin-right bottom-[15%] right-[-25%] max-lg:scale-80 md:bottom-[10%] md:right-0" src="/images/bg-hero-main-2.webp" alt=""/>
   </div>
 </section>

@@ -12,9 +12,9 @@ const { brandData } = Astro.props;
 
 {
   brandData.feedbacks.length > 0 && (
-    <section class="py-8 md:py-10 lg:py-20" data-cmp="Testimonials">
+    <section class="py-8 md:py-10 lg:py-25" data-cmp="Testimonials">
       <div class="container">
-        <h2 class="typo-h3-x2 uppercase mb-8 md:12 lg:mb-16">Отзывы наших клиентов</h2>
+        <h2 class="typo-h3 text-center uppercase mb-8 md:12 lg:mb-16">Отзывы наших клиентов</h2>
 
         {brandData.feedbacks?.map((testimonial: any) => (
           <div class="grid grid-cols-1 md:grid-cols-[23rem_1fr] gap-4 md:gap-6 py-10 not-last:border-b not-last:border-b-outline">

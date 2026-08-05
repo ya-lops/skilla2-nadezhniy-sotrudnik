@@ -18,17 +18,17 @@ const currentPath = Astro.url.pathname;
 const isServicePage = serviceUrls.some((url) => currentPath === `/${url}` || currentPath === `/${url}/`);
 
 const links = [
-  { href: `/${firstServiceUrl}`, label: "Услуги", active: isServicePage },
+  { href: `/${firstServiceUrl}`, label: "Услуги и цены", active: isServicePage },
   { href: "/about", label: "О компании", active: currentPath.includes("/about") },
   { href: "/blog", label: "Блог", active: currentPath.includes("/blog") },
   { href: "/contacts", label: "Контакты", active: currentPath.includes("/contacts") },
 ];
 ---
 
-<div x-data="{ mobileNavOpen: false }" class="sticky top-0 z-5" data-cmp="SiteHeader">
-  <header class="bg-header-surface text-header-text">
+<div x-data="{ mobileNavOpen: false }" class="sticky top-0 z-5 mx-2 lg:mx-5" data-cmp="SiteHeader">
+  <header class="text-header-text">
     <div class="container">
-      <div class="_header-inner flex items-center justify-between gap-4 py-4 lg:py-6">
+      <div class="flex items-center justify-between gap-4 py-4 lg:py-6">
         <div class="_header-logo">
           <a href="/" class="flex">
             <img
@@ -48,8 +48,8 @@ const links = [
                     <a
                       href={href}
                       class:list={[
-                        "flex items-center no-underline py-1",
-                        { "text-accent": active, "text-header-text hover:text-accent": !active },
+                        "flex items-center no-underline p-3 rounded-full border font-bold",
+                        { "border-text-primary": active, "border-transparent hover:border-text-primary": !active },
                       ]}
                       aria-current={active ? "page" : undefined}
                     >
@@ -64,12 +64,11 @@ const links = [
           <BlockMessengersLinks {brandData} showLabel={false} />
 
           <div class="_header-contact-actions flex items-center gap-4">
+            <Button href="#contact" text="Позвонить" variant="secondary" />
             {/* Условие для отображения личного кабинета, нужно брать из админки */}
             {/* сейчас просто написано чтото рандомное */}
             {/* в MobileNav.astro тоже */}
-            {brandData.main?.showPersonal && <Button href="#personal" text="Личный кабинет" variant="secondary" />}
-            <!-- <Button href="#personal" text="Личный кабинет" variant="secondary" /> -->
-            <Button href="#contact" text="Позвонить" variant="primary" />
+            {brandData.main?.showPersonal && <Button href="#personal" text="Личный кабинет" variant="primary" />}
           </div>
         </div>
 

@@ -11,54 +11,43 @@ const { brandData, type = "column" } = Astro.props;
 
 const stepsImages = [
   {
-    title: "Просто звоните и заказывайте",
-    description: "Мы рассчитаем вам точную стоимость услуг",
+    title: "Делайте заказ по телефону",
     image: "/images/how-1.webp",
   },
   {
-    title: "Рабочие приезжают точно вовремя",
-    description: "Трезые, вежливые граждане РФ ",
+    title: "Выставляем счет и вы оплачиваете",
     image: "/images/how-2.webp",
   },
   {
-    title: "Выполняем свою работу",
-    description: "Быстро, аккуратно и качественно",
+    title: "Качественно выполняем работу",
     image: "/images/how-3.webp",
   },
   {
     title: "Вы получаете документы",
-    description: "Все необходимые бухгалтерские документы",
     image: "/images/how-4.webp",
   },
 ];
 ---
 
-<section class="py-8 md:py-10 lg:py-20 overflow-clip" data-cmp="HowWeWork">
+<section class="py-8 md:py-10 lg:py-25 overflow-clip" data-cmp="HowWeWork">
   <div class="container">
-    <h2 class="typo-h3-x2 pb-10 lg:pb-15">Как мы работаем</h2>
+    <h2 class="typo-h3 pb-10 lg:pb-25 uppercase text-center">Как мы работаем</h2>
 
     {
       type == "column" && (
-        <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-10 max-w-240 mx-auto">
           {stepsImages.map((step: any, index: number) => {
             const isEven = index % 2 === 1;
 
             return (
-              <div
-                class={`_step flex max-md:flex-col md:items-center gap-10 md:gap-40 w-full max-w-230 md:px-15 ${isEven ? "ml-auto flex-row-reverse" : ""}`}
-              >
-                <div class="relative grid w-[min(100%,383px)] aspect-383/296 p-6 rounded-[20px] md:rounded-[40px] add-gradient isolate shrink-0">
-                  <div class={`relative z-1 text-text-primary-inverse typo-h5-x2 ${isEven ? "md:justify-self-end" : ""}`}>{index + 1}.</div>
-                  <img
-                    class={`absolute place-self-center pointer-events-none max-md:translate-x-[10%] ${isEven ? "md:translate-x-[-33%]" : "md:translate-x-[33%]"} pointer-events-none`}
-                    src={step.image}
-                    alt=""
-                    loading="lazy"
-                  />
+              <div class={`_step flex max-md:flex-col gap-10 md:gap-25 w-full ${isEven ? "ml-auto flex-row-reverse" : ""}`}>
+                <div class="flex flex-1 items-center gap-12">
+                  <div class={`text-text-primary typo-h3`}>{index + 1}.</div>
+                  <h3 class="typo-h6 text-balance">{step.title}</h3>
                 </div>
-                <div>
-                  <h3 class="typo-h4-x2">{step.title}</h3>
-                  <p class="mt-3">{step.description}</p>
+
+                <div class="flex-1 shrink-0 relative grid place-items-center w-[min(27rem,100%)] justify-center aspect-430/218 rounded-4xl bg-[#F0F4F9]">
+                  <img class={`absolute h-max max-h-[120%] pointer-events-none`} src={step.image} alt="" loading="lazy" />
                 </div>
               </div>
             );

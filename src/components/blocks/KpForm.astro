@@ -4,20 +4,20 @@ import FormInputKp from "@/components/ui/FormInputKp.astro";
 import FormCheckbox from "@/components/ui/FormCheckbox.astro";
 ---
 
-<div x-data="kpForm()" class="relative max-w-[800px]" data-cmp="KpForm">
+<div x-data="kpForm()" class="relative" data-cmp="KpForm">
   <form class="flex flex-col gap-10" @submit.prevent="submitForm()" novalidate>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       <FormInputKp id="kp-name" label="Имя" model="form.name" errorModel="errors.name" required />
       <FormInputKp id="kp-phone" type="tel" label="Телефон" model="form.phone" errorModel="errors.phone" required />
       <FormInputKp id="kp-email" type="email" label="Почта" model="form.email" errorModel="errors.email" required />
       <FormInputKp id="kp-inn" label="ИНН" model="form.inn" errorModel="errors.inn" required />
     </div>
 
-    <div class="flex max-lg:flex-col lg:items-center gap-5 lg:gap-10">
+    <div class="flex flex-col items-center gap-5">
       <Button
         tag="button"
         type="submit"
-        variant="accent"
+        variant="secondary"
         :disabled="submitting || !form.agreement"
         :class="{ 'grayscale opacity-50 cursor-not-allowed!': !form.agreement }"
       >
@@ -26,7 +26,7 @@ import FormCheckbox from "@/components/ui/FormCheckbox.astro";
 
       <div class="max-w-[20rem]">
         <FormCheckbox id="kp-agreement" model="form.agreement" errorModel="errors.agreement">
-          <span class="text-text-primary-inverse"
+          <span class="text-text-primary"
             >Соглашаюсь с <a href="/policy" class="underline">политикой обработки персональных данных</a></span
           >
         </FormCheckbox>

@@ -67,12 +67,12 @@ const selectedLabel = activeService?.name || services[0]?.name || "";
               href={serviceUrl}
               x-on:click="open = false; selected = $el.textContent.trim()"
               class:list={[
-                "flex justify-between gap-3 p-4 rounded-sm hover:bg-surface-secondary typo-t3 transition-colors select-none",
-                isActive ? "text-accent" : "bg-transparent",
+                "flex items-center justify-between gap-3 p-4 rounded-sm hover:bg-surface-secondary typo-t3 transition-colors select-none",
+                isActive ? "text-text-primary" : "bg-transparent",
               ]}
             >
               <span>{service.name}</span>
-              {isActive && <IconSvg name="check" />}
+              {isActive && <IconSvg class="text-accent" name="check" />}
             </a>
           );
         })

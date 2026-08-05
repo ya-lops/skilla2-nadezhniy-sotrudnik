@@ -1,0 +1,29 @@
+---
+interface Props {
+  brandData: any;
+}
+
+const { brandData } = Astro.props;
+
+const features = [
+  {
+    text: "7 лет на рынке",
+  },
+  {
+    text: "Более 200 000 заказов",
+  },
+  {
+    text: "Средняя оценка 4,99",
+  },
+];
+---
+
+<section class="flex flex-wrap justify-center gap-1.5 md:gap-2.5" data-cmp="HeroAboutFeatures">
+  {
+    features.map((feature) => (
+      <div class="typo-label py-2 px-3 rounded-full border border-text-primary font-semibold">
+        <Fragment set:html={feature.text} />
+      </div>
+    ))
+  }
+</section>

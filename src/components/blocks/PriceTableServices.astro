@@ -5,7 +5,7 @@ import { getDiscountedPrice, hasDiscount } from "@/utils/price";
 interface Props {
   currentService: BrandData["services"][number];
   discountPercent: number;
-  showDiscountValue: boolean;
+  showDiscountValue?: boolean;
 }
 
 const { currentService, discountPercent, showDiscountValue = false } = Astro.props;
@@ -34,25 +34,26 @@ const showDiscount = hasDiscount(discountPercent);
               <meta itemprop="priceCurrency" content="RUB" />
               <meta itemprop="price" content={showDiscount ? discountedPrice : subService.price} />
 
-              <h3 class="typo-h5-x2 lg:typo-h4-x2" itemprop="name">
+              <h3 class="typo-h6" itemprop="name">
                 {subService.name}
               </h3>
 
               <div class="flex items-center justify-between md:justify-end gap-10 md:ml-auto">
                 {showDiscount && (
-                  <div class="text-text-secondary line-through typo-t2" aria-hidden="true">
+                  <div class="text-text-secondary line-through typo-t1" aria-hidden="true">
                     <span>
                       от {subService.price} ₽/{subService.unit}
                     </span>
                   </div>
                 )}
 
-                <div class="flex items-center gap-2 text-text-primary typo-t2">
+                <div class="flex items-center gap-3 text-text-primary typo-t1">
                   <span aria-label={`Цена: от ${showDiscount ? discountedPrice : subService.price} рублей за ${subService.unit}`}>
                     от {showDiscount ? discountedPrice : subService.price} ₽/{subService.unit}
                   </span>
+                  
                   {showDiscountValue && (
-                    <div class="p-1 bg-surface-blur text-text-primary-inverse" aria-label={`Скидка ${discountPercent} процентов`}>
+                    <div class="typo-label p-1 bg-[#FFE063] text-text-primary rounded-xl" aria-label={`Скидка ${discountPercent} процентов`}>
                       <span>-{discountPercent}%</span>
                     </div>
                   )}

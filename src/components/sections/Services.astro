@@ -40,11 +40,11 @@ function isFeatured(service: (typeof sortedServices)[0]): boolean {
 }
 ---
 
-<section class="py-8 md:py-10 lg:py-20 overflow-clip" data-cmp="Services">
+<section class="py-8 md:py-10 lg:py-25 overflow-clip" data-cmp="Services">
   <div class="container">
-    <h2 class="mb-8 md:12 lg:mb-16 typo-h3-x2 uppercase">Наши услуги</h2>
+    <h2 class="mb-8 md:12 lg:mb-16 typo-h3 text-center uppercase">Наши услуги</h2>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col max-w-260 mx-auto">
       {
         sortedServices.map((service, index) => {
           const minService = getMinPriceService(service.services);
@@ -53,27 +53,27 @@ function isFeatured(service: (typeof sortedServices)[0]): boolean {
 
           if (isFeatured) {
             return (
-              <div class="grid grid-cols-1 md:grid-cols-[1fr_minmax(0,1fr)] gap-6 mb-6 bg-white rounded-2xl">
-                <div class="flex flex-col gap-5 p-4 md:p-10 lg:p-15">
-                  <h3 class="mb-6 typo-h5-x2">{service.name}</h3>
-                  <p class="typo-t3 text-text-secondary text-balance">
+              <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-10 lg:gap-20 mb-15 lg:mb-37.5 bg-white">
+                <div class="flex flex-col gap-2 lg:gap-5">
+                  <h3 class="mb-2 lg:mb-6 typo-h4">{service.name}</h3>
+                  <p class="typo-t4 text-text-secondary text-balance">
                     {service.description ||
-                      "С ежедневной оплатой для стройки, склада, погрузки и уборки. Доступные срочно и без посредников"}
+                      "Упакуем, аккуратно перевезём и расставим мебель в новом помещении. Работаем быстро и без срывов сроков, даже при перевозке мебели в другой город"}
                   </p>
-                  <div class="mt-5">
-                    <Button href={`/${service.url.toLowerCase()}`} variant="primary" text={`от ${discountedPrice} ₽`} />
+                  <div class="mt-4 lg:mt-7">
+                    <Button href={`/${service.url.toLowerCase()}`} variant="accent" text={`от ${discountedPrice} ₽`} />
                   </div>
                 </div>
 
                 <div
-                  class={`flex w-[min(350px,100%)] justify-center m-3 bg-[#F2F4FA] aspect-square rounded-full justify-self-center ${index === 1 ? "self-start" : "self-end"}`}
+                  class={`relative grid place-items-center w-[min(30rem,100%)] justify-center aspect-480/261 rounded-4xl ${
+                    index === 0 ? "bg-[#FFE063] order-first" : index === 1 ? "bg-[#F0F4F9] max-lg:order-first" : "bg-[#2B2B35] order-first"
+                  }`}
                 >
                   <img
                     src={`/images/service-${index + 1}.webp`}
                     alt={`Изображение для услуги ${service.name}`}
-                    class={`h-full max-w-max pointer-events-none ${
-                      index === 0 ? "translate-y-3 translate-x-[-10%]" : index === 1 ? "-translate-y-3" : "translate-y-3"
-                    }`}
+                    class={`absolute h-max max-h-[120%] pointer-events-none`}
                     loading="lazy"
                   />
                 </div>
@@ -83,17 +83,17 @@ function isFeatured(service: (typeof sortedServices)[0]): boolean {
 
           return (
             <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr_auto] gap-6 md:gap-20 py-10 not-last:border-b not-last:border-b-outline">
-              <h3 class="typo-h5-x2">{service.name}</h3>
-              <p class="typo-t3 text-text-secondary text-balance">
+              <h3 class="typo-h6">{service.name}</h3>
+              <p class="typo-t4 text-text-secondary text-balance">
                 {service.description || "С ежедневной оплатой для стройки, склада, погрузки и уборки. Доступные срочно и без посредников"}
               </p>
-              <Button href={`/${service.url.toLowerCase()}`} variant="primary" text={`от ${discountedPrice} ₽`} />
+              <Button href={`/${service.url.toLowerCase()}`} variant="accent" text={`от ${discountedPrice} ₽`} />
             </div>
           );
         })
       }
     </div>
-    <div class="flex items-center justify-center gap-4 mt-16">
+    <div class="flex items-center justify-center gap-4 mt-6 lg:mt-16">
       <Button href={firstServiceUrl} variant="secondary" text="Все услуги" arrow="right" />
     </div>
   </div>

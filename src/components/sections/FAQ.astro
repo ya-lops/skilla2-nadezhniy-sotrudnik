@@ -47,17 +47,17 @@ const faq = brandData.faq || [
 
 <section data-cmp="FAQ">
   <div class="container">
-    <div class="py-8 lg:py-20">
-      <h2 class="typo-h3-x2 uppercase mb-8 md:12 lg:mb-16">Частые вопросы</h2>
-      <div class="flex flex-col gap-5">
+    <div class="py-8 lg:py-25">
+      <h2 class="typo-h3 uppercase mb-8 md:12 lg:mb-16 text-center">Частые вопросы</h2>
+      <div class="flex flex-col gap-10 max-w-250 mx-auto">
         {
           faq.map((item: any) => (
-            <details class="not-last:border-b not-last:border-b-outline pb-5">
+            <details class="not-last:border-b not-last:border-b-outline pb-10">
               <summary class="flex justify-between items-center gap-8 cursor-pointer">
-                <span class="text-text-primary font-heading text-3xl font-medium">{item.q}</span>
+                <span class="text-text-primary typo-h6">{item.q}</span>
                 <IconSvg name="chevron-down" />
               </summary>
-              <div class="typo-t3 text-text-secondary">{item.a}</div>
+              <div class="typo-t4 text-text-secondary">{item.a}</div>
             </details>
           ))
         }
@@ -83,13 +83,12 @@ const faq = brandData.faq || [
 
     & [open]::details-content {
       height: max-content;
-      padding-block: 1.25rem;
+      padding-top: 1.25rem;
       opacity: 1;
     }
 
     & [open] svg {
       transform: rotate(180deg);
-      color: var(--color-accent);
     }
   }
 </style>
