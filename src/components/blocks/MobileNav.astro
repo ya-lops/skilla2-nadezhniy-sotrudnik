@@ -3,6 +3,7 @@ import type { BrandData } from "@/types/brand";
 
 import BlockMessengersLinks from "../blocks/BlockMessengersLinks.astro";
 import Button from "@/components/ui/Button.astro";
+import SiteHeaderLogoSvg from "./SiteHeaderLogoSvg.astro";
 
 interface NavLink {
   href: string;
@@ -64,8 +65,8 @@ const { brandData, links } = Astro.props;
     </button>
 
     <div class="py-5 px-4">
-      <a href="/" class="flex">
-        <img class="w-auto" src={brandData.default.logo || "/images/logo-main.webp"} alt={`Логотип компании ${brandData.default?.name}`} />
+      <a href="/" class="flex text-text-primary-inverse">
+        <SiteHeaderLogoSvg/>
       </a>
     </div>
 

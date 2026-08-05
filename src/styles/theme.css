@@ -1,8 +1,8 @@
 @theme {
-  --color-accent: hsla(48, 100%, 69%, 1);
+  --color-accent: #ff8f2b;
   --color-outline: hsla(228, 6%, 85%, 1);
 
-  --color-text-primary: hsla(0, 0%, 0%, 1);
+  --color-text-primary: hsla(240, 10%, 19%, 1);
   --color-text-primary-inverse: hsla(0, 0%, 100%, 1);
   --color-text-secondary: hsla(0, 0%, 27%, 0.6);
   --color-text-secondary-inverse: hsla(0, 0%, 100%, 0.8);
@@ -20,13 +20,17 @@
   --color-text-input-label: hsla(240, 10%, 19%, 1);
 
   --color-button-surface-primary: hsla(0, 0%, 100%, 1);
-  --color-button-surface-secondary: hsla(240, 10%, 19%, 1);
-  --color-button-surface-accent: hsla(48, 100%, 69%, 1);
+  --color-button-surface-secondary: transparent;
+  --color-button-surface-accent: linear-gradient(270deg,#ff9d4a 0%,#ff8b3e 100%);
   --color-button-border: transparent;
   --color-button-border-inverse: transparent;
 
-  --color-mobile-menu-surface: hsla(48, 100%, 69%, 1);
-  --color-mobile-menu-text: var(--color-text-primary);
+  --color-mobile-menu-surface: radial-gradient(
+    81.01% 188.26% at 87.61% -14.69%,
+    #51acf6 0%,
+    #2962d0 100%
+  );
+  --color-mobile-menu-text: var(--color-text-primary-inverse);
 
   --color-toast-surface: hsla(240, 10%, 19%, 1);
   --color-toast-text: hsla(0, 0%, 100%, 1);
@@ -37,7 +41,7 @@
   --color-toast-error-bg: hsla(345, 69%, 49%, 1);
   --color-toast-error-border: hsla(345, 69%, 49%, 1);
 
-  --color-promo-surface: hsla(240, 10%, 19%, 1);
+  /* --color-promo-surface: hsla(240, 10%, 19%, 1); */
   --color-promo-text-primary: hsla(0, 0%, 100%, 1);
 
   --color-hero-main-surface: hsla(48, 100%, 69%, 1);
@@ -50,39 +54,9 @@
   --color-cta-text: var(--color-text-primary-inverse);
 
   --color-kp-surface: hsla(48, 100%, 69%, 1);
-  --color-kp-text: hsla(240, 10%, 19%, 1);
-
-  --color-header-surface: var(--color-surface-primary);
-  --color-header-text: var(--color-text-primary);
-
-  --color-footer-top-surface: var(--color-surface-primary);
-  --color-footer-top-text: var(--color-text-primary);
-  --color-footer-bottom-surface: var(--color-surface-primary);
-  --color-footer-bottom-text: var(--color-text-primary);
+  --color-kp-text: var(--color-text-primary-inverse);
 
   --color-appskilla-surface: hsla(240, 12%, 13%, 1);
   --color-appskilla-text: var(--color-text-primary-inverse);
   --color-appskilla-border: transparent;
-
-
-  --color-button-primary-surface: hsla(0, 0%, 100%, 1);
-  --color-button-primary-text: hsla(240, 10%, 19%, 1);
-  --color-button-primary-border: hsla(0, 0%, 100%, 1);
-  --color-button-primary-surface_hover: hsla(48, 100%, 69%, 1);
-  --color-button-primary-text_hover: hsla(240, 10%, 19%, 1);
-  --color-button-primary-border_hover: hsla(48, 100%, 69%, 1);
-
-  --color-button-secondary-surface: hsla(240, 10%, 19%, 1);
-  --color-button-secondary-text: hsla(0, 0%, 100%, 1);
-  --color-button-secondary-border: hsla(240, 10%, 19%, 1);
-  --color-button-secondary-surface_hover: hsla(48, 100%, 69%, 1);
-  --color-button-secondary-text_hover: hsla(240, 10%, 19%, 1);
-  --color-button-secondary-border_hover: hsla(48, 100%, 69%, 1);
-
-  --color-button-accent-surface: hsla(48, 100%, 69%, 1);
-  --color-button-accent-text: hsla(240, 10%, 19%, 1);
-  --color-button-accent-border: hsla(48, 100%, 69%, 1);
-  --color-button-accent-surface_hover: hsla(240, 10%, 19%, 1);
-  --color-button-accent-text_hover: hsla(0, 0%, 100%, 1);
-  --color-button-accent-border_hover: hsla(240, 10%, 19%, 1);
 }

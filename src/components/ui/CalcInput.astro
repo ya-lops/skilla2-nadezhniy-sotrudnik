@@ -18,8 +18,8 @@ const sliderStyle = `\`width: \${(((${model} - ${min}) / (${max} - ${min})) * 10
 <div class="flex flex-col gap-6" data-cmp="CalcInput">
   <label for={id} class="text-text-primary-inverse typo-t4">{label}</label>
 
-  <div class="relative w-full h-[6px] rounded-full bg-[#1E1E26]">
-    <div class="h-full rounded-full bg-[#FFE063] transition-all duration-150" x-bind:style={sliderStyle}></div>
+  <div class="relative w-full h-[6px] rounded-full bg-[#23488E]">
+    <div class="h-full rounded-full bg-[#FF9A48] transition-all duration-150" x-bind:style={sliderStyle}></div>
     <input
       type="range"
       x-model.number={model}
@@ -27,8 +27,8 @@ const sliderStyle = `\`width: \${(((${model} - ${min}) / (${max} - ${min})) * 10
       max={max}
       step={step}
       class="absolute top-1/2 left-0 -translate-y-1/2 w-full h-4 appearance-none bg-transparent cursor-pointer
-          [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-[14px] [&::-webkit-slider-thumb]:h-[23px] [&::-webkit-slider-thumb]:rounded-sm [&::-webkit-slider-thumb]:bg-[#FFE063] [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-none [&::-webkit-slider-thumb]:shadow-sm
-          [&::-moz-range-thumb]:w-[14px] [&::-moz-range-thumb]:h-[23px] [&::-moz-range-thumb]:rounded-sm [&::-moz-range-thumb]:bg-[#FFE063] [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
+          [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-[24px] [&::-webkit-slider-thumb]:h-[24px] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[radial-gradient(circle,#FFF_40%,#FF9A48_40%)] [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-none [&::-webkit-slider-thumb]:shadow-sm
+          [&::-moz-range-thumb]:w-[24px] [&::-moz-range-thumb]:h-[24px] [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#FF9A48] [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
     />
   </div>
 

@@ -13,16 +13,16 @@ const { tag: Tag = "a", type, text, class: Classname, variant = "primary", arrow
 
 // Базовые классы
 const baseClasses =
-  "inline-flex items-center justify-center gap-2.5 h-[2.625rem] lg:h-[3.25rem] px-6 rounded-[100px] font-semibold cursor-pointer transition-all duration-250 typo-button";
+  "inline-flex items-center justify-center gap-2.5 h-[2.625rem] lg:h-[3.75rem] px-7 rounded-2xl font-semibold cursor-pointer transition-all duration-250 typo-button";
 
 // Классы для разных типов
 const variantClasses = {
-  accent:
-    "bg-button-accent-surface hover:bg-button-accent-surface_hover text-button-accent-text hover:text-button-accent-text_hover border border-button-accent-border hover:border-button-accent-border_hover",
   primary:
-    "bg-button-primary-surface hover:bg-button-primary-surface_hover text-button-primary-text hover:text-button-primary-text_hover border border-button-primary-border hover:border-button-primary-border_hover",
+    "bg-white hover:bg-accent text-text-primary hover:text-text-primary-inverse border-2 border-transparent",
   secondary:
-    "bg-button-secondary-surface hover:bg-button-secondary-surface_hover text-button-secondary-text hover:text-button-secondary-text_hover border border-button-secondary-border hover:border-button-secondary-border_hover",
+    "bg-transparent hover:bg-accent text-text-primary hover:text-text-primary-inverse border-2 border-[#2B2B35] hover:border-transparent",
+  accent:
+    "bg-accent hover:bg-[#2B2B35] text-text-primary-inverse border-2 border-transparent",
 };
 
 const buttonClasses = `${baseClasses} ${variantClasses[variant]}`;

@@ -2,6 +2,7 @@
 import type { BrandData } from "@/types/brand";
 
 import HeroMainFeatures from "../blocks/HeroMainFeatures.astro";
+import Button from "../ui/Button.astro";
 
 interface Props {
   brandData: BrandData;
@@ -11,23 +12,27 @@ const { brandData } = Astro.props;
 ---
 
 <section
-  class="hero grid grid-cols-[100%] min-h-[510px] md:min-h-[1000px] mt-[-100px] pt-[100px] lg:mt-[-100px] lg:pt-[100px] bg-hero-main-surface mx-2 lg:mx-5 rounded-[20px] md:rounded-[40px] overflow-clip"
+  class="hero grid grid-cols-[100%] min-h-[510px] md:min-h-[1000px] mt-[-120px] pt-[110px] lg:mt-[-110px] lg:pt-[120px] mx-2 lg:mx-5 rounded-[20px] md:rounded-[40px] overflow-clip add-gradient"
   data-cmp="HeroMain"
 >
-  <div class="container relative h-full isolate">
-    <div class="flex flex-col items-center justify-center h-full py-7 lg:py-14 text-center">
-      <h1 class="flex flex-col uppercase my-auto py-25 lg:pb-[72px]">
-        <span class="typo-h1">Грузчики,</span>
-        <span class="typo-h1">Разнорабочие</span>
-        <span class="typo-h1 text-text-primary-inverse">В {brandData.main.city_rod}</span>
-      </h1>
-      <div class="max-w-200">
-        <HeroMainFeatures {brandData} />
+  <div class="relative h-full isolate">
+    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] h-full items-center isolate">
+      <div class="relative z-1 flex flex-col gap-7 lg:gap-10 py-7 lg:py-14 px-4 lg:px-25">
+        <h1 class="flex flex-col typo-h1 uppercase my-auto">
+          <span class="add-text-gradient">Услуги</span>
+          <span class="add-text-gradient">грузчиков</span>
+          <span class="text-text-primary-inverse">В {brandData.main.city_rod}</span>
+        </h1>
+        <div class="max-w-200">
+          <HeroMainFeatures {brandData} />
+        </div>
+        <div class="mt-auto">
+          <Button href="#kp" variant="accent" text="Получить КП" />
+        </div>
       </div>
-
-      <img class="absolute -z-1 max-lg:origin-top-left max-lg:scale-50 top-[-5%] left-[-5%] md:top-0 md:left-[15%]" src="/images/bg-hero-main-1.webp" alt=""/>
-      <img class="absolute -z-1 max-lg:origin-right bottom-[15%] right-[-25%] max-lg:scale-80 md:bottom-[20%] md:right-0" src="/images/bg-hero-main-2.webp" alt=""/>
-      <img class="absolute -z-1 max-lg:origin-bottom-left bottom-[5%] left-[-25%] max-lg:scale-80 md:bottom-0 md:left-[-10%]" src="/images/bg-hero-main-3.webp" alt=""/>
+      <div class="relative z-0 self-end flex items-center justify-end">
+        <img src="/images/hero-main.webp" alt="" fetchpriority="high" class="lg:max-w-max pointer-events-none" />
+      </div>
     </div>
   </div>
 </section>

@@ -1,35 +1,32 @@
 ---
-interface Props {
-  brandData: any;
-}
-
-const { brandData } = Astro.props;
-
 const features = [
   {
-    text: "Фиксированная стоимость",
+    text: "Низкие цены",
   },
   {
-    text: "Удобная оплата",
+    text: "Трезвые рабочие в течение 1 часа",
+  },
+  {
+    text: "Фиксированная стоимость",
   },
   {
     text: "Отсрочка при крупных заказах",
   },
   {
-    text: "Работы по договору",
-  },
-  {
-    text: "Работы по договору",
+    text: "Удобная оплата",
   },
 ];
 ---
 
-<section class="flex flex-wrap justify-center gap-1.5 md:gap-2.5" data-cmp="HeroMainFeatures">
-  {
-    features.map((feature) => (
-      <div class="typo-label py-2 px-3 rounded-full border border-text-primary font-semibold">
-        <Fragment set:html={feature.text} />
-      </div>
-    ))
-  }
+<section data-cmp="HeroFeatures">
+  <ul>
+    {
+      features.map((feature) => (
+        <li class="typo-t3 flex items-center gap-3 mb-2">
+          <span class="w-2 h-2 shrink-0 rounded-full bg-accent"></span>
+          <span class="text-text-primary-inverse" set:html={feature.text} />
+        </li>
+      ))
+    }
+  </ul>
 </section>

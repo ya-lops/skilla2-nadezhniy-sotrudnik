@@ -44,7 +44,7 @@ function isFeatured(service: (typeof sortedServices)[0]): boolean {
   <div class="container">
     <h2 class="mb-8 md:12 lg:mb-16 typo-h3 text-center uppercase">Наши услуги</h2>
 
-    <div class="flex flex-col max-w-260 mx-auto">
+    <div class="flex flex-col max-w-285 mx-auto">
       {
         sortedServices.map((service, index) => {
           const minService = getMinPriceService(service.services);
@@ -53,7 +53,7 @@ function isFeatured(service: (typeof sortedServices)[0]): boolean {
 
           if (isFeatured) {
             return (
-              <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-10 lg:gap-20 mb-15 lg:mb-37.5 bg-white">
+              <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-10 lg:gap-20 mb-15 lg:mb-37.5 items-center">
                 <div class="flex flex-col gap-2 lg:gap-5">
                   <h3 class="mb-2 lg:mb-6 typo-h4">{service.name}</h3>
                   <p class="typo-t4 text-text-secondary text-balance">
@@ -66,8 +66,8 @@ function isFeatured(service: (typeof sortedServices)[0]): boolean {
                 </div>
 
                 <div
-                  class={`relative grid place-items-center w-[min(30rem,100%)] justify-center aspect-480/261 rounded-4xl ${
-                    index === 0 ? "bg-[#FFE063] order-first" : index === 1 ? "bg-[#F0F4F9] max-lg:order-first" : "bg-[#2B2B35] order-first"
+                  class={`relative grid place-items-center w-[min(30rem,100%)] justify-center aspect-480/310 rounded-4xl add-gradient-accent ${
+                    index === 0 ? "order-first" : index === 1 ? "max-lg:order-first" : "order-first"
                   }`}
                 >
                   <img

@@ -7,9 +7,9 @@
 }
 
 :root {
-  --site-font-base: 'Mulish', sans-serif;
-  --site-font-heading: 'Dela Gothic One', sans-serif;
-  --site-font-montserrat: 'Montserrat', sans-serif;
+  --site-font-base: "Mulish", sans-serif;
+  --site-font-heading: "Dela Gothic One", sans-serif;
+  --site-font-montserrat: "Montserrat", sans-serif;
 }
 
 @utility font-base {
@@ -22,6 +22,25 @@
 
 @utility font-montserrat {
   font-family: var(--site-font-montserrat);
+}
+
+@utility add-gradient {
+  background: radial-gradient(
+    81.01% 188.26% at 87.61% -14.69%,
+    #51acf6 0%,
+    #2962d0 100%
+  );
+}
+
+@utility add-gradient-accent {
+  background: linear-gradient(270deg, #FF9D4A 0%, #FF8B3E 100%);
+}
+
+@utility add-text-gradient {
+  background: linear-gradient(180deg, #ffa04c 0%, #ff7c34 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* ===== HEADINGS ===== */
@@ -79,7 +98,7 @@
 }
 
 @utility typo-button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: clamp(1rem, 0.895rem + 0.448vw, 1.125rem);
   line-height: 100%;

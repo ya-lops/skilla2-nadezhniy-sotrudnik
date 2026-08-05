@@ -1,30 +1,36 @@
 ---
 import type { BrandData } from "@/types/brand";
 
-import HeroAboutFeatures from "../blocks/HeroAboutFeatures.astro";
+import Button from "../ui/Button.astro";
 
 interface Props {
   brandData: BrandData;
 }
 
 const { brandData } = Astro.props;
+
+const firstServiceUrl = brandData.services[0].url.toLowerCase();
 ---
 
 <section
-  class="hero grid grid-cols-[100%] min-h-[510px] md:min-h-[880px] mt-[-133px] pt-[133px] lg:mt-[-172px] lg:pt-[172px] bg-hero-main-surface mx-2 lg:mx-5 rounded-[20px] md:rounded-[40px] overflow-clip"
+  class="hero grid grid-cols-[100%] min-h-[510px] md:min-h-[1000px] mt-[-120px] pt-[110px] lg:mt-[-110px] lg:pt-[120px] mx-2 lg:mx-5 rounded-[20px] md:rounded-[40px] overflow-clip add-gradient"
   data-cmp="HeroAbout"
 >
-  <div class="container relative h-full isolate">
-    <div class="flex flex-col items-center justify-center h-full py-14 text-center">
-      <h1 class="flex flex-col typo-h1 uppercase my-auto pb-25 lg:pb-[132px]">
-        <span class="">Фанатично контролируем <span class="text-text-primary-inverse">качество услуг</span></span>
-      </h1>
-      <div class="max-w-200">
-        <HeroAboutFeatures {brandData} />
+  <div class="relative h-full isolate">
+    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] h-full items-center isolate">
+      <div class="relative z-1 flex flex-col gap-7 lg:gap-10 py-7 lg:py-14 px-4 lg:px-25">
+        <h1 class="flex flex-col typo-h1 uppercase my-auto">
+          <span class="add-text-gradient">87 000</span>
+          <span class="add-text-gradient">заказов</span>
+          <span class="text-text-primary-inverse">за 10 лет работы</span>
+        </h1>
+        <div class="mt-18">
+          <Button href={`/${firstServiceUrl}`} variant="primary" text="Наши услуги" />
+        </div>
+      </div>
+      <div class="relative z-0 self-end flex items-center justify-end ">
+        <img src="/images/hero-about.webp" alt="" fetchpriority="high" class="lg:max-w-max pointer-events-none" />
       </div>
     </div>
-
-    <img class="absolute -z-1 max-lg:origin-top-left top-[-25%] left-[-25%] max-lg:scale-80 md:bottom-0 md:left-[0%]" src="/images/bg-hero-main-3.webp" alt=""/>
-    <img class="absolute -z-1 max-lg:origin-right bottom-[15%] right-[-25%] max-lg:scale-80 md:bottom-[10%] md:right-0" src="/images/bg-hero-main-2.webp" alt=""/>
   </div>
 </section>
