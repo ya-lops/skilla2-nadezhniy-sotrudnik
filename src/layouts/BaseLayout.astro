@@ -24,6 +24,7 @@ interface Props {
 
 import { getBrandData } from "@/lib/api";
 import { getMetaByUrl } from "@/utils/meta";
+import SeoContent from "@/components/sections/SeoContent.astro";
 
 const brandData = await getBrandData();
 
@@ -66,6 +67,7 @@ const { metaTitle, metaDescription, metaKeywords } = Astro.props;
 
     <main>
       <slot />
+      <SeoContent {brandData}/>
     </main>
 
     <SiteFooter {brandData} />
