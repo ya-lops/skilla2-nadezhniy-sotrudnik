@@ -5,12 +5,20 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs.astro";
 import Blog from "@/components/sections/Blog.astro";
 
 import { getBrandData } from "@/lib/api";
+import { getBlogPostByUrl } from "@/lib/blogs";
 
 const { blogpost } = Astro.params;
 
 const brandData = await getBrandData();
 
-const article = brandData.blogs?.find((b) => b.url === blogpost);
+let article = brandData.blogs?.find((b) => b.url === blogpost);
+
+if (!article) {
+  const postData = await getBlogPostByUrl(blogpost);
+  if (postData) {
+    article = postData;
+  }
+}
 
 if (!article) {
   return Astro.rewrite("/404");

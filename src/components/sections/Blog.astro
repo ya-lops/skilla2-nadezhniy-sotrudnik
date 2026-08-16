@@ -1,6 +1,7 @@
 ---
 import type { BrandData, BlogPost } from "@/types/brand";
 import Button from "@/components/ui/Button.astro";
+import { getBlogPosts } from "@/lib/blogs";
 
 interface Props {
   brandData: BrandData;
@@ -12,7 +13,12 @@ const { brandData, showLast = false } = Astro.props;
 const currentPath = Astro.url?.pathname || "";
 const isBlogPage = currentPath === "/blog";
 
-const posts = showLast ? brandData.blogs?.slice(0, 3) : brandData.blogs;
+const blogData = await getBlogPosts();
+const allPosts = blogData?.items || brandData.blogs || [];
+
+const posts = showLast || !isBlogPage
+  ? allPosts.slice(0, 3)
+  : allPosts;
 
 const defaultCover = brandData.default.blog_default_cover;
 ---

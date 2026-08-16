@@ -163,6 +163,42 @@ export interface BlogPost {
   url: string;
 }
 
+export interface BlogLink {
+  first: string | null;
+  last: string | null;
+  prev: string | null;
+  next: string | null;
+}
+
+export interface BlogPaginationLink {
+  url: string | null;
+  label: string;
+  active: boolean;
+}
+
+export interface BlogMeta {
+  current_page: number;
+  from: number;
+  last_page: number;
+  links: BlogPaginationLink[];
+  path: string;
+  per_page: number;
+  to: number;
+  total: number;
+}
+
+export interface BlogsApiData {
+  links: BlogLink;
+  meta: BlogMeta;
+  items: BlogPost[];
+}
+
+export interface BlogsApiResponse {
+  success: boolean;
+  data: BlogsApiData;
+  message: string;
+}
+
 // ============ Города на карте ============
 
 export interface MapCity {
